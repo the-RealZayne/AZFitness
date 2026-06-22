@@ -10,8 +10,8 @@ mkdirSync('public', { recursive: true });
 for (const file of ['index.html', 'app.js', 'styles.css', 'manifest.webmanifest', 'icon.svg']) {
   copyFileSync(file, `public/${file}`);
 }
-const supabaseUrl = process.env.VITE_SUPABASE_URL || '';
-const supabaseKey = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || '';
+const supabaseUrl = process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL || '';
+const supabaseKey = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_ANON_KEY || '';
 writeFileSync('public/config.js', `window.AZFITNESS_CONFIG=${JSON.stringify({ supabaseUrl, supabaseKey })};\n`);
 if (existsSync('assets')) cpSync('assets', 'public/assets', { recursive: true });
 console.log('AZFitness static files copied to public/ for Vercel.');
