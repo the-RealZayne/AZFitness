@@ -5,7 +5,8 @@ AZFitness is a black/yellow/gold family workout and health-tracking PWA for Zayn
 ## What is built now
 
 - Static installable PWA for Android Chrome/Samsung Internet.
-- Athlete login with name dropdown, first PIN `0000`, then verified 4-digit PIN. Profiles are not switchable inside the app; use **Log out / switch athlete**.
+- Athlete setup/login: first screen creates a real athlete profile with name, birthday, sex, height in feet/inches, weight in pounds, weekly load, goals, limitations, and a 4-digit PIN. Profiles are not switchable inside the app; use **Log out / switch athlete**.
+- No guessed starter stats: calorie, protein, water, BMI, and readiness calculations stay locked/blank until required athlete data is entered.
 - Required editable athlete info: birthday, sex, height in feet/inches, weight in pounds, weekly load, limitations/injuries, profile picture, and theme settings.
 - Weekly target entry for workouts, miles, minutes, steps, water, protein, sleep, and meditation.
 - Goal planner with choices like bulk up, strengthen core, walk, run, hike, yoga, meditate, condition, mobility, recovery, and family challenges.
