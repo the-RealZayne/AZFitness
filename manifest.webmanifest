@@ -1,0 +1,13 @@
+{
+  "name": "AZFitness",
+  "short_name": "AZFit",
+  "description": "Adaptive workout plans, stats, and camera form coaching for Zayne and family.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#16a34a",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
