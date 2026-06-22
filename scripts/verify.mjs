@@ -34,6 +34,7 @@ const checks = [
   ['detailed anatomy graphics present', js.includes('muscleSvg(\'front\')') && css.includes('muscle-atlas') && css.includes('anatomy')],
   ['open-source exercise data present', js.includes('wger.de/api/v2/exercise') && js.includes('wger exercise catalog results')],
   ['professional health rings present', js.includes('Professional health monitor board') && css.includes('metric-ring')],
+  ['android app chrome present', js.includes('ANDROID GOLD HEALTH OS') && js.includes('bottom-nav') && css.includes('Android-grade product polish') && css.includes('bottom-tab')],
   ['open data source badges present', js.includes('Open Food Facts') && js.includes('Open-Meteo') && js.includes('wger Exercise API')],
   ['photos/timeline present', js.includes('savePhoto') && js.includes('Clickable history timeline')],
   ['Supabase cloud sync present', js.includes('azfitness_sync') && js.includes('AZFITNESS_CONFIG') && html.includes('config.js')],
