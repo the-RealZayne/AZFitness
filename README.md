@@ -10,14 +10,15 @@ AZFitness is a black/yellow/gold family workout and health-tracking PWA for Zayn
 - Weekly target entry for workouts, miles, minutes, steps, water, protein, sleep, and meditation.
 - Goal planner with choices like bulk up, strengthen core, walk, run, hike, yoga, meditate, condition, mobility, recovery, and family challenges.
 - Prebuilt and custom workout builder with activity types including walk, run, hike, bike, weights, swimming, kayaking, sports, yoga, mobility, and conditioning.
+- Open-source wger Exercise API lookup so routines can pull professional public exercise catalog items into the custom builder.
 - Step-by-step workout onboarding: start a routine, move exercise by exercise, finish and save the session.
 - MediaPipe Pose Landmarker live coach with skeleton overlay, joint angles, posture checks, rep counting, and pinpoint correction events.
-- Samsung-style health monitor board for manual tracking of mindfulness, body composition, steps, water, medications, blood oxygen, blood pressure, blood glucose, health records, age index, antioxidant index, vascular load, heart rate, stress, sleep, breathing, and focus/pupil proxy.
+- Professional health dashboard with readiness/fuel/hydration rings, monitor tiles, and manual tracking of mindfulness, body composition, steps, water, medications, blood oxygen, blood pressure, blood glucose, health records, age index, antioxidant index, vascular load, heart rate, stress, sleep, breathing, and focus/pupil proxy.
 - Weather/environment capture via Open-Meteo: temperature, humidity, heat/feels-like, UV, and wind.
 - Food/beverage search using a local fallback database plus public Open Food Facts results, amounts, meal types, calories, protein, carbs, and fat.
 - Meal plan generator with recipes, portions, timing, calorie targets, protein, and water targets based on profile stats.
 - GPS route tracker with start/stop, miles, mph, route drawing, saved routes, route notes, delete, and manual point entry.
-- Clickable muscle map that shows routines for body areas.
+- Detailed front/back clickable muscle atlas that shows routines for body areas.
 - Journey timeline with workouts, route stats, before/during/after stats, correction markers, and progress photos.
 - Supabase JSON snapshot cloud-sync client wiring through browser-safe public env vars.
 
