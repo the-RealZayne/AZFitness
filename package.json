@@ -4,8 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "build": "node scripts/verify.mjs",
+    "build": "node scripts/build.mjs",
     "verify": "node scripts/verify.mjs",
-    "serve": "python3 -m http.server 5173"
+    "serve": "python3 -m http.server 5173",
+    "serve:public": "python3 -m http.server 5173 --directory public"
   }
 }
