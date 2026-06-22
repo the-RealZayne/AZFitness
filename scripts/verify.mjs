@@ -25,6 +25,7 @@ const checks = [
   ['food search/meal plans present', js.includes('world.openfoodfacts.org') && js.includes('mealPlanHtml')],
   ['GPS route tracker present', js.includes('watchPosition') && js.includes('routeMiles')],
   ['photos/timeline present', js.includes('savePhoto') && js.includes('Clickable history timeline')],
+  ['Supabase cloud sync present', js.includes('azfitness_sync') && js.includes('AZFITNESS_CONFIG') && html.includes('config.js')],
   ['local storage present', js.includes('localStorage')],
   ['responsive css present', css.includes('@media(max-width:980px)')]
 ];

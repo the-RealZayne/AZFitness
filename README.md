@@ -13,7 +13,7 @@ AZFitness is a family-first workout tracker PWA for Android phones. It includes 
 - MediaPipe Pose Landmarker integration with fallback camera overlay for joint angles, posture score, and pinpoint correction markers.
 - Experimental camera wellness proxies for heart-rate/breath rhythm and pupil/focus changes. These are educational only, not medical measurements.
 - Progress dashboards with charts for minutes, steps, miles, body metrics, hydration, food, calories, and long-term growth.
-- Food/water logging and cloud-sync-ready Supabase notes using environment variables only; local-first mode works now.
+- Food/water logging and Supabase cloud-sync client wiring using Vercel public environment variables; local-first mode still works offline.
 
 ## Safety / privacy
 
@@ -36,10 +36,4 @@ Copy `.env.example` to `.env.local` and fill in the project URL plus publishable
 cp .env.example .env.local
 ```
 
-Suggested tables for the next cloud-sync phase:
-
-- `profiles`: id, owner_id, display_name, birth_year, height_cm, weight_kg, level, goals, limitations, theme
-- `workout_sessions`: id, owner_id, profile_id, plan_id, started_at, duration_min, effort, steps, avg_hr, notes
-- `form_events`: id, session_id, timestamp_sec, joint, severity, cue, local_clip_ref
-
-Enable Row Level Security so users can only read/write their own data.
+Suggested cloud-sync table is included at `supabase/migrations/001_azfitness_sync.sql`. Apply it in the Supabase SQL editor for the Workout App project, or deploy it with a Supabase DB connection string. The browser app syncs through the public key and a per-profile PIN hash header; service/secret/JWT keys must stay server-side only.
