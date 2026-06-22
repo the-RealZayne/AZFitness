@@ -5,17 +5,19 @@ AZFitness is a family-first workout tracker PWA for Android phones. It includes 
 ## What is built now
 
 - Static HTML/CSS/JavaScript PWA installable on Android Chrome/Samsung Internet — no build dependencies required.
+- Original black/yellow/gold A-Z Fitness command-center layout.
+- Local athlete login with name dropdown, first PIN `0000`, then verified 4-digit PIN stored as a browser hash.
 - Multi-profile setup for Zayne and CAK3D with height, weight, age, goals, level, and limitations.
-- Daily and weekly workout programming by category and muscle group.
-- Workout session logging with effort, heart rate, step count, GPS distance notes, and improvement history.
-- Camera coach panel that can run in the browser and prepare for MediaPipe pose detection. It gives real-time form cues, records short flagged moments, and writes recap markers.
-- Progress dashboards for consistency, volume, estimated calories, heart-rate zones, and long-term trends.
-- Color theme picker.
-- Cloud-sync-ready Supabase notes using environment variables only; local-first mode works now.
+- Daily and weekly choreographed workout programming by category, muscle group, cues, and target joint angles.
+- Workout logging with effort, heart rate, steps, miles/GPS notes, calories, and form recap markers.
+- MediaPipe Pose Landmarker integration with fallback camera overlay for joint angles, posture score, and pinpoint correction markers.
+- Experimental camera wellness proxies for heart-rate/breath rhythm and pupil/focus changes. These are educational only, not medical measurements.
+- Progress dashboards with charts for minutes, steps, miles, body metrics, hydration, food, calories, and long-term growth.
+- Food/water logging and cloud-sync-ready Supabase notes using environment variables only; local-first mode works now.
 
 ## Safety / privacy
 
-This app is for fitness education and self-tracking, not medical diagnosis. Kids should train with adult supervision. Camera clips stay local unless a future sync feature is explicitly added.
+This app is for fitness education and self-tracking, not medical diagnosis. Kids should train with adult supervision. Camera clips stay local unless a future sync feature is explicitly added. Camera-derived heart rate, breathing, pupil/focus, posture, and joint-angle values are estimates/proxies and should not be used for health decisions.
 
 ## Local development
 
