@@ -18,9 +18,13 @@ const checks = [
   ['index loads styles.css', html.includes('href="./styles.css"')],
   ['manifest has app name', manifest.name === 'AZFitness'],
   ['camera coach present', js.includes('navigator.mediaDevices.getUserMedia')],
-  ['workout library present', js.includes('Gold Standard Strength') && js.includes('Adventure Miles')],
+  ['workout library present', js.includes('Gold Strength Builder') && js.includes('Run/Walk Route Mission')],
   ['MediaPipe pose integration present', js.includes('@mediapipe/tasks-vision') && js.includes('PoseLandmarker')],
   ['PIN login present', js.includes('First login PIN is 0000') && js.includes('hashPin')],
+  ['imperial profile fields present', js.includes('heightFt') && js.includes('weightLb') && js.includes('mph')],
+  ['food search/meal plans present', js.includes('world.openfoodfacts.org') && js.includes('mealPlanHtml')],
+  ['GPS route tracker present', js.includes('watchPosition') && js.includes('routeMiles')],
+  ['photos/timeline present', js.includes('savePhoto') && js.includes('Clickable history timeline')],
   ['local storage present', js.includes('localStorage')],
   ['responsive css present', css.includes('@media(max-width:980px)')]
 ];
