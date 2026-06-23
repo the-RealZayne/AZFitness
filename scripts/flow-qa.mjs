@@ -21,7 +21,7 @@ const { window } = dom;
 window.console = { ...console, error: (...args) => errors.push(args.join(' ')), warn: () => {} };
 Object.defineProperty(window, 'crypto', { value: nodeCrypto.webcrypto, configurable: true });
 window.HTMLCanvasElement.prototype.getContext = () => ({
-  clearRect(){}, fillRect(){}, strokeRect(){}, beginPath(){}, moveTo(){}, lineTo(){}, stroke(){}, fill(){}, arc(){}, drawImage(){}, fillText(){},
+  clearRect(){}, fillRect(){}, strokeRect(){}, beginPath(){}, moveTo(){}, lineTo(){}, stroke(){}, fill(){}, arc(){}, drawImage(){}, fillText(){}, save(){}, restore(){},
   set fillStyle(v){}, set strokeStyle(v){}, set lineWidth(v){}, set shadowColor(v){}, set shadowBlur(v){}, set font(v){}
 });
 window.navigator.geolocation = {
@@ -69,6 +69,7 @@ await click('#createAthlete');
 await new Promise(r => setTimeout(r, 30));
 
 assert('profile creation lands on dashboard', text().includes('Today’s command center'));
+assert('today ask uses multi-select dropdown', !!qs('#askSelect') && text().includes('Pick up to 3 things for today'));
 assert('real profile stats render after entry', text().includes('150 lb') && text().includes("5'8"));
 assert('bottom nav exists with five tabs', qsa('.bottom-tab').length === 5);
 
@@ -97,6 +98,7 @@ for (const [tab, expected] of sideExpect) {
 }
 
 await click('.nav[data-tab="goals"]');
+assert('goals page uses dropdown selectors', !!qs('#goalPick') && !!qs('#activityPick') && !!qs('#loadPick'));
 set('#targetName', 'Walk miles');
 set('#targetAmount', '5');
 set('#targetUnit', 'miles');
@@ -104,15 +106,17 @@ await click('#addTarget');
 assert('weekly target saves and remains visible', text().includes('Walk miles') && text().includes('5 miles'));
 
 await click('.nav[data-tab="builder"]');
+assert('workout library uses dropdown selector', !!qs('#workoutPick') && text().includes('Choose routine'));
 set('#workoutFilter', 'core');
 await click('#filterBtn');
 assert('builder filter keeps routine list usable', text().includes('Core Armor'));
 
 await click('.nav[data-tab="fuel"]');
-set('#foodQ', 'banana');
+set('#foodQ', 'soda');
 await click('#foodSearch');
 await new Promise(r => setTimeout(r, 20));
-assert('food search displays selectable results', text().includes('Banana') && text().includes('Add to diet log'));
+assert('food search displays selectable food and drink results', text().includes('soda') || text().includes('Cola'));
+assert('drink entries can be added to diet log', text().includes('drink') && text().includes('Add to diet log'));
 
 await click('.nav[data-tab="route"]');
 set('#manualLat', '44.31');
@@ -123,6 +127,17 @@ set('#manualLng', '-69.79');
 await click('#addPoint');
 await click('#stopRoute');
 assert('manual route can save route history', text().includes('Saved editable routes') && text().includes('mi'));
+assert('route map shows GPS live map and step estimate', text().includes('Steps est.') && !!qs('#routeMap'));
+
+await click('.nav[data-tab="health"]');
+await click('#fetchWeather');
+await new Promise(r => setTimeout(r, 20));
+assert('weather renders Fahrenheit not Celsius', text().includes('°F') && !text().includes('°C'));
+
+await click('.nav[data-tab="builder"]');
+set('#workoutPick', 'route-mission');
+await click('#startPicked');
+assert('route activity asks outside track or treadmill', text().includes('Outside / trail / road') && text().includes('Treadmill with camera'));
 
 await click('.nav[data-tab="muscles"]');
 const muscle = qs('[data-muscle="core"]');
