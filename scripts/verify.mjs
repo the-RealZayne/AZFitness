@@ -21,7 +21,7 @@ const checks = [
   ['workout library present', js.includes('Gold Strength Builder') && js.includes('Run/Walk Route Mission')],
   ['MediaPipe pose integration present', js.includes('@mediapipe/tasks-vision') && js.includes('PoseLandmarker')],
   ['PIN login present', js.includes('Create a matching 4-digit PIN') && js.includes('hashPin')],
-  ['no fake starter stats', js.includes('profiles:[]') && !js.includes("profile(z,'Zayne',13)") && !js.includes("weightLb:name==='Zayne'?100")],
+  ['no fake starter stats', js.includes('profiles:[]') && js.includes("p.heightFt=''") && !js.includes("profile(z,'Zayne',13)") && !js.includes("weightLb:name==='Zayne'?100")],
   ['profile setup required', js.includes('Create your first athlete profile') && js.includes('No placeholder stats') && js.includes('profileComplete')],
   ['no profile switcher inside app', js.includes('Log out / switch athlete') && js.includes('Log in before switching profiles')],
   ['imperial profile fields present', js.includes('heightFt') && js.includes('weightLb') && js.includes('mph')],
